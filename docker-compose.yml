@@ -7,7 +7,6 @@ services:
     ports:
       - "8000:8000"
       - "10200:10200"
-      - "10300:10300"
     volumes:
       - ./voices:/app/voices
       - ./config:/app/config
