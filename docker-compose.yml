@@ -6,6 +6,7 @@ services:
     env_file: speech.env
     ports:
       - "8000:8000"
+      - "10200:10200"
     volumes:
       - ./voices:/app/voices
       - ./config:/app/config
