@@ -5,7 +5,7 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install -U pip
 ARG TARGETPLATFORM
 RUN <<EOF
 apt-get update
-apt-get install --no-install-recommends -y curl ffmpeg
+apt-get install --no-install-recommends -y curl ffmpeg nano git
 if [ "$TARGETPLATFORM" != "linux/amd64" ]; then
 	apt-get install --no-install-recommends -y build-essential
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -41,4 +41,9 @@ ENV TTS_HOME=voices
 ENV HF_HOME=voices
 ENV COQUI_TOS_AGREED=1
 
+RUN <<EOF
+git clone https://github.com/rhasspy/wyoming-piper.git
+cd wyoming-piper
+script/setup
+EOF
 CMD bash startup.sh
