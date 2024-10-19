@@ -45,5 +45,10 @@ RUN <<EOF
 git clone https://github.com/rhasspy/wyoming-piper.git
 cd wyoming-piper
 script/setup
+cd ..
+git clone https://github.com/rhasspy/wyoming-faster-whisper.git
+cd wyoming-faster-whisper
+script/setup
+cd ..
 EOF
 CMD bash startup.sh
