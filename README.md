@@ -1,6 +1,6 @@
 # OpenedAI Speech
 
-Modified to also install wyoming-piper which uses the less retrictive MIT licence.
+Modified to also install wyoming-piper and wyoming-faster-whisper which use the less retrictive MIT licence.
 
 An OpenAI API compatible text to speech server.
 
