@@ -8,7 +8,9 @@ bash download_voices_tts-1.sh
 bash download_voices_tts-1-hd.sh $PRELOAD_MODEL
 
 cd wyoming-piper
-script/run --piper '/usr/share/piper/piper' --voice en_US-lessac-medium --uri 'tcp://0.0.0.0:10200' --data-dir /data --download-dir /data &
+script/run --piper '/usr/local/bin/piper' --voice en_US-lessac-medium --uri 'tcp://0.0.0.0:10200' --data-dir /data --download-dir /data &
+cd ../wyoming-faster-whisper
+script/run --model tiny-int8 --language en --uri 'tcp://0.0.0.0:10300' --data-dir /data2 --download-dir /data2 &
 cd ..
 
 python speech.py ${PRELOAD_MODEL:+--preload $PRELOAD_MODEL} $EXTRA_ARGS $@
