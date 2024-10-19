@@ -1,5 +1,7 @@
 # OpenedAI Speech
 
+Modified to also install wyoming-piper which uses the less retrictive MIT licence.
+
 An OpenAI API compatible text to speech server.
 
 * Compatible with the OpenAI audio/speech API
